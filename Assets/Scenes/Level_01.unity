@@ -967,6 +967,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2564729193814793937, guid: 3e489e40b19bf294c96368fb660344b4, type: 3}
+      propertyPath: rotSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2571188800469248642, guid: 3e489e40b19bf294c96368fb660344b4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
