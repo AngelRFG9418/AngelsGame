@@ -7,6 +7,7 @@ public class enemyType1 : MonoBehaviour
     public GameObject player;
     public GameObject projectile;
     public float followDistance;
+    public GameObject missileSpawnPoint;
 
     private Vector2 direction;
     float distance;
@@ -63,7 +64,7 @@ public class enemyType1 : MonoBehaviour
             while (canShoot == true)
             {
                 
-                Instantiate(projectile, transform.position, transform.rotation);
+                Instantiate(projectile, missileSpawnPoint.transform.position, transform.rotation);
                 yield return new WaitForSeconds(4);
             }
             yield return null;
