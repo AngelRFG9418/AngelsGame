@@ -16,6 +16,8 @@ public class enemyType2 : MonoBehaviour
     public float speed;
     public float rotSpeed;
 
+    public 
+
     float r;
 
     bool canShoot;
@@ -87,10 +89,13 @@ public class enemyType2 : MonoBehaviour
 
                 //waits 1 second between each color change
                 gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                laser.GetComponent<SpriteRenderer>().color = Color.yellow;
                 yield return new WaitForSeconds(1);
                 gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+                laser.GetComponent<SpriteRenderer>().color = Color.yellow;
                 yield return new WaitForSeconds(1);
                 gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                laser.GetComponent<SpriteRenderer>().color = Color.red;
                 canRotate = false;
                 yield return new WaitForSeconds(0.5f);
 
