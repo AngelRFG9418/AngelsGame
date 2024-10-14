@@ -22,6 +22,8 @@ public class shootScript : MonoBehaviour
     public GameObject[] blood;
     private int numberInList;
 
+    public bool canShoot = true;
+
     //OUnity Events allows activation of events to be called from the inspector (really cool)
     public UnityEvent OnBegin, OnDone, OnReloadDone;
 
@@ -89,19 +91,23 @@ public class shootScript : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetMouseButtonDown(0))
+        if (canShoot)
         {
-            shot.Play();
 
-            shoot();
+            if (Input.GetMouseButtonDown(0))
+            {
+                shot.Play();
 
-            StartCoroutine(camera.GetComponent<cameraScript>().shaking());
+                shoot();
 
-            //called in inspector
-            OnBegin?.Invoke();
-            Instantiate(projectile, spawnPoint.transform.position, spawnPoint.transform.rotation);
-            recoil();
+                StartCoroutine(camera.GetComponent<cameraScript>().shaking());
+
+                //called in inspector
+                OnBegin?.Invoke();
+                Instantiate(projectile, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                recoil();
+            }
+
         }
 
     }

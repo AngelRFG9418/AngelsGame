@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
 
     public UiManager uiManager;
 
+    public bool canMove = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,7 +30,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (canMove)
+        {
             horiz = Input.GetAxis("Horizontal");
             vert = Input.GetAxis("Vertical");
 
@@ -41,12 +44,14 @@ public class Movement : MonoBehaviour
                 StartCoroutine(dodge());
             }
 
-        //dodge cooldown
-        if(timeRemain < dodgeCooldown)
-        {
-            timeRemain += Time.deltaTime;
-            uiManager.stam = timeRemain / dodgeCooldown;
-            
+            //dodge cooldown
+            if (timeRemain < dodgeCooldown)
+            {
+                timeRemain += Time.deltaTime;
+                uiManager.stam = timeRemain / dodgeCooldown;
+
+            }
+
         }
     }
 
