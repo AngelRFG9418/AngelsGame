@@ -15,6 +15,7 @@ public class score : MonoBehaviour
 
 
     public TMP_Text scoreText;
+    public GameObject BG;
     public GameObject coolDownIcon;
     public TMP_Text multiplierText;
 
@@ -43,6 +44,7 @@ public class score : MonoBehaviour
 
         //resets timer UI
         comboCooldown = maxCooldown;
+        BG.SetActive(true);
 
         //start multiplier cooldownm
         StartCoroutine(multiplierCooldown());
@@ -54,6 +56,7 @@ public class score : MonoBehaviour
         multiplier = 0;
         string multiplierString = multiplier.ToString();
         multiplierText.SetText("");
+        BG.SetActive(false);
     }
 
 }
