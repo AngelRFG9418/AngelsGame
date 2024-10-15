@@ -1148,6 +1148,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5954851233141517257, guid: 3e489e40b19bf294c96368fb660344b4, type: 3}
+      propertyPath: timeUp
+      value: 
+      objectReference: {fileID: 7499351896302900985, guid: ae440d5963ddb0d46a3df40324d99ca6, type: 3}
+    - target: {fileID: 5954851233141517257, guid: 3e489e40b19bf294c96368fb660344b4, type: 3}
       propertyPath: bgMusic
       value: 
       objectReference: {fileID: 1907771615}

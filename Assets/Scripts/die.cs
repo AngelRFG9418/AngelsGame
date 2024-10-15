@@ -19,13 +19,20 @@ public class die : MonoBehaviour
 
     public Component[] render;
 
+    public bool timer = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("evil"))
         {
-            deathSound.Play();
-            deathSound = null;
-            gameOver(deathText);
+            //'timer' varible checks if the timer has completed, or if it no longer needed. Otherwise, disbale other UI to avoid bugs
+            if (!timer)
+            {
+                deathSound.Play();
+                deathSound = null;
+                gameOver(deathText);
+                bgMusic.Pause();
+            }
         }
 
     }
@@ -34,13 +41,16 @@ public class die : MonoBehaviour
     {
         if (timerUiManager.fraction <= 0)
         {
-
-            gameOver(timeUp);
+            if (!timer)
+            {
+                gameOver(timeUp);
+            }
         }
     }
 
     public void gameOver(GameObject text)
     {
+        timer = true;
 
         //disables all spawners
         foreach (GameObject o in spawners)
@@ -57,7 +67,8 @@ public class die : MonoBehaviour
 
         
 
-        bgMusic.Pause();
+
+
         //destroys player
         render = this.gameObject.GetComponentsInChildren<SpriteRenderer>();
 
@@ -68,6 +79,7 @@ public class die : MonoBehaviour
             //repeats these lines to ensure that they are disabled if either script was in use during the death
             this.gameObject.GetComponent<Movement>().canMove = false;
             this.gameObject.GetComponent<shootScript>().canShoot = false;
+            //Destroy(this.gameObject);
         }
 
 
