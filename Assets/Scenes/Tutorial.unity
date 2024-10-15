@@ -3002,6 +3002,7 @@ MonoBehaviour:
   comboCooldown: 0
   maxCooldown: 3
   scoreText: {fileID: 355972780}
+  BG: {fileID: 0}
   coolDownIcon: {fileID: 1544231418}
   multiplierText: {fileID: 813748419}
 --- !u!4 &1889396302
@@ -3057,7 +3058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -373, y: -231}
+  m_AnchoredPosition: {x: -409.6, y: -245.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914349197
@@ -3626,6 +3627,7 @@ MonoBehaviour:
   - {fileID: 1492590536493963959, guid: 60c13107a3fe7ed47ac4e528b865bc88, type: 3}
   - {fileID: 922991788019426678, guid: 9848b815994185548b28c9cfc89a9411, type: 3}
   - {fileID: 1184063446014601925, guid: 430f4aeb32e8195449b6191da1815e4e, type: 3}
+  canShoot: 1
   OnBegin:
     m_PersistentCalls:
       m_Calls:
@@ -3748,6 +3750,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   uiManager: {fileID: 8455496729519876568}
+  canMove: 1
 --- !u!114 &8455496729519876570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3767,6 +3770,10 @@ MonoBehaviour:
   - {fileID: 2071367020}
   - {fileID: 1067613639}
   timerUiManager: {fileID: 1840864804}
+  bgMusic: {fileID: 0}
+  deathSound: {fileID: 0}
+  render: []
+  timer: 0
 --- !u!50 &8455496729519876571
 Rigidbody2D:
   serializedVersion: 4

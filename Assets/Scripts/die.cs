@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class die : MonoBehaviour
@@ -65,8 +66,16 @@ public class die : MonoBehaviour
             Destroy(o);
         }
 
-        
+        //destroy all missiles
+        foreach (GameObject o in GameObject.FindGameObjectsWithTag("evil"))
+        {
+            Destroy(o);
+        }
 
+        //stops player
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        this.GetComponent<Movement>().horiz = 0;
+        this.GetComponent<Movement>().vert = 0;
 
 
         //destroys player
