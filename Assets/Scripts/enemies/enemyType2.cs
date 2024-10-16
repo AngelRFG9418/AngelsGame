@@ -88,13 +88,11 @@ public class enemyType2 : MonoBehaviour
                 laser.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 0.6f);
 
                 //waits 1 second between each color change
-                gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+
                 laser.GetComponent<SpriteRenderer>().color = Color.yellow;
                 yield return new WaitForSeconds(1);
-                gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
                 laser.GetComponent<SpriteRenderer>().color = Color.yellow;
                 yield return new WaitForSeconds(1);
-                gameObject.GetComponent<SpriteRenderer>().color = Color.red;
                 laser.GetComponent<SpriteRenderer>().color = Color.red;
                 canRotate = false;
                 yield return new WaitForSeconds(0.5f);

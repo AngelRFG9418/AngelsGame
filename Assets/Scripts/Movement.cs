@@ -60,7 +60,6 @@ public class Movement : MonoBehaviour
     {
         Debug.Log("shift down");
         this.GetComponent<CircleCollider2D>().enabled = false;
-        this.GetComponent<SpriteRenderer>().color = Color.green;
 
         timeRemain = 0;
 
@@ -70,7 +69,7 @@ public class Movement : MonoBehaviour
         OnDone.Invoke();
 
         this.GetComponent<CircleCollider2D>().enabled = true;
-        this.GetComponent<SpriteRenderer>().color = Color.white;
+
         
     }
 
